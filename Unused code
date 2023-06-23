@@ -1,0 +1,73 @@
+
+live_loop :BadRomance do
+  
+  live_loop :Drums do
+    
+    32.times do
+      drumlineIntro
+      
+    end
+    
+    32.times do
+      drumline
+    end
+    
+    48.times do
+      drumline2
+    end
+    
+    32.times do
+      simpleDrumline
+    end
+    
+    56.times do
+      drumline
+    end
+    stop
+  end
+  
+  define :drumlineIntro do
+    with_fx :lpf, cutoff: 60 + tick * 2 do
+      sample :bd_fat, amp: 2
+      sleep 1
+      sample :bd_fat, amp: 2
+      sample :sn_zome, amp: 0.7
+      sleep 1
+    end
+  end
+  
+  define :drumline do
+    sample :bd_fat, amp: 3
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.7
+    sleep 0.5
+    sample :bd_fat, amp: 3
+    sample :sn_zome, amp: 0.7
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.7
+    sleep 0.5
+  end
+  
+  define :drumline2 do
+    sample :bd_fat, amp: 3
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.4
+    sleep 0.5
+    sample :bd_fat, amp: 3
+    sample :sn_zome, amp: 0.7
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.4
+    sleep 0.5
+  end
+  
+  define :simpleDrumline do
+    sample :bd_fat, amp: 3
+    sleep 0.5
+    sleep 0.5
+    sample :bd_fat, amp: 3
+    sample :sn_zome, amp: 0.7
+    sleep 0.5
+    sleep 0.5
+  end
+end
+
