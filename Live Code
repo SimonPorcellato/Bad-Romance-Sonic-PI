@@ -1,0 +1,372 @@
+# Welcome to Sonic Pi
+
+# MAIN SYNTH FOR THE INTRO AND CHORUS --------------------
+with_fx :reverb do
+  live_loop :synth do
+    define :mainsynth do
+      use_synth :tech_saws
+      play :C4
+      sleep 2
+      play :A4
+      sleep 2
+      play :D4
+      sleep 3
+      play :F4
+      sleep 1
+      play :E4
+      sleep 3
+      play :G4
+      sleep 1
+      play :E4
+      sleep 2
+      play :C5
+      sleep 1
+      play :G4
+      sleep 1
+    end
+    mainsynth()
+    mainsynth()
+    sleep 112
+    
+  end
+  
+  # PLCUK FOR THE INTRO AND CHORUS -----------------------
+  live_loop :pluck do
+    use_synth :pluck
+    define :ACF do
+      play :A5, amp: 0.5
+      play :C6, amp: 0.5
+      play :F6, amp: 0.5
+      sleep 0.5
+    end
+    define :BDG do
+      play :B5, amp: 0.5
+      play :D6, amp: 0.5
+      play :G6, amp: 0.5
+      sleep 0.5
+    end
+    define :ACE do
+      play :A5, amp: 0.5
+      play :C6, amp: 0.5
+      play :E6, amp: 0.5
+      sleep 0.5
+    end
+    define :CEA do
+      play :A6, amp: 0.5
+      play :C6, amp: 0.5
+      play :E6, amp: 0.5
+      sleep 0.5
+    end
+    define :GsBD do
+      play :Gs5, amp: 0.5
+      play :B5, amp: 0.5
+      play :D6, amp: 0.5
+      sleep 0.5
+    end
+    define :introplcuk do
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      ACE()
+      CEA()
+      CEA()
+      CEA()
+      CEA()
+      # LOOP HERE
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      ACF()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      BDG()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      GsBD()
+      CEA()
+      CEA()
+      CEA()
+      CEA()
+    end
+    
+    introplcuk()
+    sleep 112
+    introplcuk()
+  end
+  
+  # DRUMS AND SFX ------------------------
+  
+  live_loop :drums do
+    define :drum do
+      sample :drum_heavy_kick
+      sleep 1
+      sample :drum_heavy_kick
+      sample :sn_zome
+      sleep 1
+      sample :drum_heavy_kick
+      sleep 1
+      sample :drum_heavy_kick
+      sample :sn_zome
+      sleep 1
+      sample :drum_heavy_kick
+      sleep 1
+      sample :drum_heavy_kick
+      sample :sn_zome
+      sleep 1
+      sample :drum_heavy_kick
+      sleep 1
+      sample :drum_heavy_kick
+      sample :sn_zome
+      sleep 1
+    end
+    define :drumweak do
+      sample :bd_ada
+      sleep 0.5
+      sample :drum_cymbal_pedal
+      sleep 0.5
+      sample :bd_ada
+      sleep 0.5
+      sample :drum_cymbal_pedal
+      sleep 0.5
+      sample :bd_ada
+      sleep 0.5
+      sample :drum_cymbal_pedal
+      sleep 0.5
+      sample :bd_ada
+      sleep 0.5
+      sample :drum_cymbal_pedal
+      sleep 0.5
+    end
+    define :fried do
+      sample :drum_heavy_kick
+      sample :bd_hause
+      sleep 0.5
+      sample :drum_cymbal_closed
+      sleep 0.5
+      sample :drum_heavy_kick
+      sample :bd_hause
+      sleep 0.5
+      sample :drum_cymbal_closed
+      sleep 0.5
+      sample :drum_heavy_kick
+      sample :bd_hause
+      sleep 0.5
+      sample :drum_cymbal_closed
+      sleep 0.5
+      sample :drum_heavy_kick
+      sample :bd_hause
+      sleep 0.5
+      sample :drum_cymbal_closed
+      sleep 0.5
+    end
+    
+    sample :ambi_lunar_land
+    sleep 40
+    drumweak()
+    sleep 4
+    drum()
+    drum()
+    # no trance
+    drum()
+    drum()
+    drum()
+    drum()
+    drum()
+    drum()
+    drum()
+    drum()
+    #p[rechrous
+    fried()
+    fried()
+    fried()
+    fried()
+    #chourus
+  end
+  
+  #TRANCE SYNTH ----------------
+  
+  live_loop :trance do
+    define :trancemain do
+      with_fx :echo, phase: 0.5, decay: 1, mix: 0.4 do
+        use_synth :tech_saws
+        sleep 0.5
+        play :E5
+        sleep 1
+        play :E5
+        sleep 1
+        play :E5
+        sleep 1
+        play :Ds5
+        sleep 1
+        play :E5
+        sleep 1
+        play :E5
+        sleep 1
+        play :E5
+        sleep 1
+        play :Es5
+        sleep 0.5
+      end
+      
+    end
+    sleep 32
+    trancemain()
+    trancemain()
+    trancemain()
+    trancemain()
+    
+    sleep 6486786
+  end
+  
+  # bass
+  live_loop :bassmain do
+    use_synth :prophet
+    define :basspre do
+      play :A2
+      sleep 0.5
+      play :A2
+      sleep 0.5
+      play :C3
+      sleep 0.5
+      play :C3
+      sleep 0.5
+      play :E3
+      sleep 0.5
+      play :E3
+      sleep 0.5
+      play :F3
+      sleep 0.5
+      play :F3
+      sleep 0.5
+      play :A2
+      sleep 0.5
+      play :A2
+      sleep 0.5
+      play :C3
+      sleep 0.5
+      play :C3
+      sleep 0.5
+      play :E3
+      sleep 0.5
+      play :E3
+      sleep 0.5
+      play :F3
+      sleep 0.5
+      play :F3
+      sleep 0.5
+      play :A2
+      sleep 0.5
+      play :A2
+      sleep 0.5
+      play :C3
+      sleep 0.5
+      play :C3
+      sleep 0.5
+      play :E3
+      sleep 0.5
+      play :E3
+      sleep 0.5
+      play :F3
+      sleep 0.5
+      play :F3
+      sleep 1
+      play :G3
+      sleep 1
+      play :G3
+      sleep 1
+      play :G3
+      sleep 1
+      play :G3
+      sleep 0.5
+    end
+    define :bassmain do
+      sleep 0.5
+      play :A2
+      sleep 1
+      play :A2
+      sleep 1
+      play :A2
+      sleep 1
+      play :A2
+      sleep 1
+      play :C3
+      sleep 1
+      play :C3
+      sleep 1
+      play :F3
+      sleep 1
+      play :F3
+      sleep 1
+      play :A2
+      sleep 1
+      play :A2
+      sleep 1
+      play :A2
+      sleep 1
+      play :A2
+      sleep 1
+      play :C3
+      sleep 1
+      play :C3
+      sleep 1
+      play :G2
+      sleep 1
+      play :G2
+      sleep 0.5
+    end
+    
+    sleep 48
+    basspre()
+    bassmain()
+    bassmain()
+    bassmain()
+    bassmain()
+    basspre()
+  end
+  
+  
+  
+  
+end #reberb
