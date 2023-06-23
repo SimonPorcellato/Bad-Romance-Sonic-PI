@@ -1,5 +1,5 @@
 # Welcome to Sonic Pi
-
+use_bpm 119
 # MAIN SYNTH FOR THE INTRO AND CHORUS --------------------
 with_fx :reverb do
   live_loop :synth do
